@@ -1,0 +1,58 @@
+---
+title: "Análisis de datos para diseño factorial DBCA"
+author: "jhinmy"
+format: html
+toc: true
+number-sections: true
+# Cargar paquetes
+```{r}
+library(ggplot2)  # Para gráficos
+library(dplyr)    # Para manipulación de datos
+# Cargar la base de datos
+```{r}
+data <- read.csv("# Cargar la base de datos
+```{r}
+data <- read.csv(# Cargar la base de datos
+```{r}
+data <- read.csv("ruta/a_tu_archivo.csv")
+head(data)  # Mostrar primeras filas
+)
+head(data)  # Mostrar primeras filas
+")
+head(data)  # Mostrar primeras filas
+# Cargar la base de datos
+```{r}
+data <- read.csv("C:\Users\ACER\Documents\programacion\jhinmy\docs")
+head(data)  # Mostrar primeras filas
+
+# Cargar datos
+data <- read.csv("C:/Users/ACER/Documents/programacion/jhinmy/docs/datos.csv")
+
+# Mostrar las primeras filas de los datos
+head(data)
+key:
+  - value1
+  - value2
+head(data)
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
