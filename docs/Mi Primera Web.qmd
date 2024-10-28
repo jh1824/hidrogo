@@ -265,3 +265,89 @@ ggplot(dtcm, aes(x = geno, y = emmean, fill = riego)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   ggtitle("Gráfico de barras: LFA por genotipo y riego")
 ```
+
+#Análisis multivariate
+
+```{r}
+str(fb)
+```
+
+##Correlation
+
+```{r}
+library(psych)
+library(tidyverse)
+fb %>% 
+  select_if(is.numeric) %>% 
+  dplyr::select(!c("block")) %>% 
+  pairs.panels(x= .
+             , hist.col="red"
+             , pch= 21
+             , atars= TRUE
+             , scale= FALSE
+             , lm= TRUE
+             )
+```
+
+##PCA: analysis de components principales
+
+```{r}
+# Cargar librerías necesarias
+library(dplyr)
+library(ggplot2)
+
+# Paso 1: Preparar los datos
+# Seleccionar solo las variables numéricas de `fb`
+datos_pca <- fb %>%
+  select_if(is.numeric) %>%
+  dplyr::select(-block)  # Elimina la columna 'block' si es irrelevante
+
+# Paso 2: Estandarizar los datos
+# Escalar (estandarizar) las variables
+datos_estandarizados <- scale(datos_pca)
+
+# Paso 3: Realizar el PCA
+pca_result <- prcomp(datos_estandarizados, center = TRUE, scale. = TRUE)
+
+# Mostrar el resumen del PCA
+summary(pca_result)
+
+# Paso 4: Graficar los resultados
+# Convertir los resultados del PCA a data frame para ggplot2
+pca_data <- as.data.frame(pca_result$x)  # Convertir a data frame
+
+# Visualización del PCA sin la variable `grupo`
+ggplot(pca_data, aes(x = PC1, y = PC2)) +
+  geom_point(size = 2, color = "blue") +  # Usar un solo color si no hay variable de agrupación
+  labs(title = "Análisis de Componentes Principales (PCA)",
+       x = "PC1",
+       y = "PC2") +
+  theme_minimal()
+
+
+```
+
+##PCA
+
+```{r}
+library(FactoMineR)
+library(cowplot)
+mv <- fb %>% 
+  group_by(riego, geno) %>% 
+  summarise(across(where(is.numeric), ~ mean(., na.rm = TRUE))) %>% 
+  PCA(scale.unit = T, quali.sup = c(1:4), graph = F)
+
+
+p1 <- plot(mv
+     , choix="ind"
+     , habillage=1
+     , label = "ind"
+     )
+
+
+p2 <- plot(mv
+     , choix="var")
+
+list(p1, p2) %>% 
+  plot_grid(plotlist = ., nrow = 1)
+```
