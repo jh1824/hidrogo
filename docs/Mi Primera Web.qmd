@@ -4,7 +4,7 @@
 
 ---
 title: "Como usar quarto"
-author: "Jymmi"
+author: "Jhinmy Yhanner Hidrogo Paredes"
 format:
   html:
     toc: true
@@ -50,10 +50,49 @@ Esta es una formula cualquiera $$\frac{\left(2x-1\right)^2-1}{4}=k$$
 
 # Mi primera pagina web.
 
-1.  Tener mi proyecto
-2.  conectar mi poryecto a github
-3.  Tener un archivo en formato html llamado index.hetml
-4.  Activar Gi thub pages
+Mi nombre es Jhinmy Yhanner Hidrogo Paredes , estudiante del VIII ciclo de la carrera de Ingeniería Agrónoma, esta es mi página web, donde en las clases prácticas del curso Programación y Análisis de datos; con la ayuda del docente hemos analizado la base de datos de su tesis denominada: "**Eficiencia de uso de agua en quince genotipos de papa (Solanum tuberosum L.) bajo condiciones de estrés hídrico por sequía". Dicha base tenía 150 observaciones y 18 variables.**
+
+#Paquetes Utilizados:
+
+-   ggplot
+
+<!-- -->
+
+-   library(lme4)
+
+-   library(lmerTest)
+
+-   library(inti)
+
+-   library(agricolae)
+
+-   library(tidyverse)
+
+-   library(emmeans)
+
+-   library(multcomp)
+
+-   library(multcompView)
+
+-   library(ggplot2)
+
+-   library(psych)
+
+-   library(dplyr)
+
+-   library(FactoMineR)
+
+-   library(cowplot)
+
+    Objetivos:
+
+    Tener mi proyecto
+
+    conectar mi poryecto a github
+
+    Tener un archivo en formato html llamado index.hetml
+
+    Activar Gi thub pages
 
 # Modelos lineales mixtos
 
